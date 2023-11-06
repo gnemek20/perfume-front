@@ -1,6 +1,6 @@
 <template>
-  <div class="flex">
-    <img ref="Abydos1" class="" src="@/assets/Abydos01.jpg">
+  <div class="banner flex relative">
+    <img ref="Abydos1" class="absolute" src="@/assets/Abydos01.jpg">
     <img ref="Abydos2" class="none" src="@/assets/Abydos02.jpg">
     <img ref="Abydos3" class="none" src="@/assets/Abydos03.jpg">
   </div>
@@ -21,14 +21,14 @@ export default {
       const image = this.$refs[`Abydos${count}`];
 
       beforeImage.className = 'fade-out';
+      image.className = 'block absolute';
 
       setTimeout(() => {
         beforeImage.className = 'none'
-        image.className = 'block';
-      }, 750);
+      }, 3000);
 
       count === 3 ? count = 1 : count++;
-    }, 8000);
+    }, 10000);
   },
   beforeDestroy() {
     clearInterval(this.interval);
@@ -55,15 +55,19 @@ export default {
   }
 }
 
+.banner {
+  height: 500px;
+}
+
 img {
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
-  animation: fade-in 1000ms;
+  animation: fade-in 3500ms;
 }
 
 .fade-out {
-  animation: fade-out 750ms;
+  animation: fade-out 3000ms;
   animation-fill-mode: forwards;
 }
 </style>
