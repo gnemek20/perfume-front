@@ -7,9 +7,8 @@
             <div class="flex mt-20px mb-100px">
               <h1 class="color-fcf8f7">Logo</h1>
             </div>
-            <div class="blank" />
             <div class="flex flex-column">
-              <div id="category">
+              <div id="category" class="mb-30px">
                 <h3 class="color-fcf8f7">Category</h3>
                 <hr class="mt-10px mb-10px">
                 <div>
@@ -21,8 +20,7 @@
                   <p class="color-fcf8f7 pointer text-hover pt-5px">Daily</p>
                 </div>
               </div>
-              <div class="blank mt-30px mb-30px" />
-              <div id="community">
+              <div id="community" class="mt-30px">
                 <h3 class="color-fcf8f7">Community</h3>
                 <hr class="mt-10px mb-10px">
                 <div>

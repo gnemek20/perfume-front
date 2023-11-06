@@ -11,6 +11,22 @@ hr {
   display: none;
 }
 
+.grid {
+  display: grid;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
 .flex {
   display: flex;
 }
@@ -281,6 +297,26 @@ hr {
 
 .screen-height {
   height: 100vh;
+}
+
+.opacity-0 {
+  opacity: 0%;
+}
+
+.opacity-25 {
+  opacity: 25%;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+.opacity-75 {
+  opacity: 75%;
+}
+
+.opacity-100 {
+  opacity: 100%;
 }
 
 .pointer {
