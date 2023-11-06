@@ -82,8 +82,4 @@
 .width-240px {
   width: 200px;
 }
-
-.screen-height {
-  height: 300vh;
-}
 </style>

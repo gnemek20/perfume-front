@@ -1,8 +1,8 @@
 <template>
   <div class="banner flex relative">
     <img ref="Abydos1" class="opacity-100 absolute" src="@/assets/Abydos01.jpg">
-    <img ref="Abydos2" class="opacity-0" src="@/assets/Abydos02.jpg">
-    <img ref="Abydos3" class="opacity-0" src="@/assets/Abydos03.jpg">
+    <img ref="Abydos2" class="opacity-0 absolute" src="@/assets/Abydos02.jpg">
+    <img ref="Abydos3" class="opacity-0 absolute" src="@/assets/Abydos03.jpg">
     <div class="absolute max-width max-height flex justify-center">
       <div class="selector top-auto mb-10px grid gap-10 opacity-75">
         <label for="1" class="relative">
