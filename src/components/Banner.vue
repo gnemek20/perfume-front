@@ -77,7 +77,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 3500ms;
+  transition: 3000ms;
 }
 input[type="radio"] {
   display: none;
@@ -98,7 +98,7 @@ input[type="radio"]:checked + .button {
   height: 500px;
 }
 .fade-out {
-  transition: 2500ms !important;
+  transition: 2000ms !important;
 }
 
 .width-70px {
