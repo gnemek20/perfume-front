@@ -10,23 +10,16 @@
             <div class="flex flex-column">
               <div id="category" class="mb-30px">
                 <h3 class="color-fcf8f7">Category</h3>
-                <hr class="mt-10px mb-10px">
-                <div>
-                  <p class="color-fcf8f7 pointer text-hover pb-5px">New</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">Best</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">Warm</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">Cool</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">Lovely</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px">Daily</p>
+                <hr class="mt-10px mb-5px">
+                <div v-for="category in categories" v-bind:key="category">
+                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">{{ category }}</p>
                 </div>
               </div>
               <div id="community" class="mt-30px">
                 <h3 class="color-fcf8f7">Community</h3>
-                <hr class="mt-10px mb-10px">
-                <div>
-                  <p class="color-fcf8f7 pointer text-hover pb-5px">Notice</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">Review</p>
-                  <p class="color-fcf8f7 pointer text-hover pt-5px">Event</p>
+                <hr class="mt-10px mb-5px">
+                <div v-for="community in communities" v-bind:key="community">
+                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">{{ community }}</p>
                 </div>
               </div>
             </div>
@@ -55,6 +48,17 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      categories: ['New', 'Best', 'Warm', 'Cool', 'Lovely', 'Daily'],
+      communities: ['Notice', 'Review', 'Event']
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .side {

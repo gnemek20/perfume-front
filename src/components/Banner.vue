@@ -1,20 +1,10 @@
 <template>
   <div class="banner flex relative">
-    <img ref="Abydos1" class="opacity-100 absolute" src="@/assets/Abydos01.jpg">
-    <img ref="Abydos2" class="opacity-0 absolute" src="@/assets/Abydos02.jpg">
-    <img ref="Abydos3" class="opacity-0 absolute" src="@/assets/Abydos03.jpg">
+    <img :ref="`Abydos${++index}`" class="opacity-0 absolute" :src="image" v-for="(image, index) in images" v-bind:key="index">
     <div class="absolute max-width max-height flex justify-center">
       <div class="selector top-auto mb-10px grid gap-10 opacity-75">
-        <label for="1" class="relative">
-          <input ref="radio1" type="radio" id="1" name="image" @click="clickRadioButton(1)" checked>
-          <span class="button pointer"></span>
-        </label>
-        <label for="2" class="relative">
-          <input ref="radio2" type="radio" id="2" name="image" @click="clickRadioButton(2)">
-          <span class="button pointer"></span>
-        </label>
-        <label for="3" class="relative">
-          <input ref="radio3" type="radio" id="3" name="image" @click="clickRadioButton(3)">
+        <label :for="number" class="relative" v-for="number in images.length" v-bind:key="number">
+          <input :ref="`radio${number}`" type="radio" :id="number" name="image" @click="clickRadioButton(number)">
           <span class="button pointer"></span>
         </label>
       </div>
@@ -27,12 +17,16 @@ export default {
   data() {
     return {
       interval: null,
-      images: ['Abydos01', 'Abydos02', 'Abydos03'],
-      count: 0
+      count: 1,
+      images: [
+        require("@/assets/Abydos01.jpg"),
+        require("@/assets/Abydos02.jpg"),
+        require("@/assets/Abydos03.jpg")
+      ]
     }
   },
   mounted() {
-    this.changeImages(1);
+    this.clickRadioButton(1);
   },
   beforeDestroy() {
     this.clearThisInterval();
@@ -43,9 +37,9 @@ export default {
       this.interval = setInterval(() => {
         this.count === 3 ? this.count = 1 : this.count++;
 
-        const beforeImage = this.$refs[`Abydos${this.count - 1 === 0 ? this.images.length : this.count - 1}`]
-        const image = this.$refs[`Abydos${this.count}`];
-        const radioButton = this.$refs[`radio${this.count}`];
+        const beforeImage = this.$refs[`Abydos${this.count - 1 === 0 ? this.images.length : this.count - 1}`][0];
+        const image = this.$refs[`Abydos${this.count}`][0];
+        const radioButton = this.$refs[`radio${this.count}`][0];
 
         beforeImage.className = 'opacity-0 fade-out absolute';
         image.className = 'opacity-100 absolute';
@@ -56,14 +50,14 @@ export default {
       clearInterval(this.interval);
     },
     clickRadioButton(number) {
-      if (this.count === number) return;
-
       this.clearThisInterval();
-      const beforeImage = this.$refs[`Abydos${this.count}`];
-      const image = this.$refs[`Abydos${number}`];
+      const beforeImage = this.$refs[`Abydos${this.count}`][0];
+      const image = this.$refs[`Abydos${number}`][0];
+      const radioButton = this.$refs[`radio${number}`][0];
 
       beforeImage.className = 'opacity-0 fade-out absolute';
       image.className = 'opacity-100 absolute';
+      radioButton.checked = true;
 
       this.count === 3 ? this.count = 1 : this.count++;
       this.changeImages(number);
