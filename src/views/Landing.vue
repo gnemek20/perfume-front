@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     scrollCategory() {
-      const element = document.getElementsByClassName('absolute width-240px')[0];
+      const element = document.getElementsByClassName('absolute width-200px')[0];
       const scrollY = window.scrollY;
       const CategoryY = scrollY <= 500 ? scrollY : 500;
 

@@ -2,8 +2,8 @@
   <div class="flex flex-column screen-height">
     <div class="flex max-height">
       <div id="side" class="side flex flex-column relative">
-        <div class="absolute width-240px right-10px">
-          <div class="fixed flex flex-column width-240px">
+        <div class="absolute width-200px right-10px">
+          <div class="fixed flex flex-column width-200px">
             <div class="flex mt-20px mb-100px">
               <h1 class="color-fcf8f7">Logo</h1>
             </div>
@@ -12,22 +12,48 @@
                 <h3 class="color-fcf8f7">Category</h3>
                 <hr class="mt-10px mb-5px">
                 <div v-for="category in categories" v-bind:key="category">
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">{{ category }}</p>
+                  <p class="color-fcf8f7 cursor-pointer text-hover pt-5px pb-5px">{{ category }}</p>
                 </div>
               </div>
               <div id="community" class="mt-30px">
                 <h3 class="color-fcf8f7">Community</h3>
                 <hr class="mt-10px mb-5px">
                 <div v-for="community in communities" v-bind:key="community">
-                  <p class="color-fcf8f7 pointer text-hover pt-5px pb-5px">{{ community }}</p>
+                  <p class="color-fcf8f7 cursor-pointer text-hover pt-5px pb-5px">{{ community }}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="content" class="content flex flex-column max-width">
-        <slot />
+      <div id="content" class="content flex justify-center max-width">
+        <div class="lock-width max-width">
+          <div class="flex mr-5px pt-10px pr-10px">
+            <div class="flex left-auto">
+              <div ref="user" class="cursor-pointer flex flex-column justify-start align-center pr-5px pl-5px relative" @mouseenter="mouseEnterUser" @mouseleave="mouseLeaveUser">
+                <img src="@/assets/icons/user.svg" width="24px">
+                <div ref="userMenu" class="none cursor-default flex flex-column border-solid radius-10px width-100px pt-10px pb-10px absolute top-30px" @mouseenter="mouseEnterUser" @mouseleave="mouseLeaveUser">
+                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">
+                    <p>로그인</p>
+                  </div>
+                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">
+                    <p>회원가입</p>
+                  </div>
+                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">
+                    <p>주문조회</p>
+                  </div>
+                </div>
+              </div>
+              <div class="cursor-pointer flex align-start pr-5px pl-5px mr-30px ml-30px">
+                <img src="@/assets/icons/steamed.svg" width="24px">
+              </div>
+              <div class="cursor-pointer flex align-start pr-5px pl-5px">
+                <img src="@/assets/icons/cart.svg" width="24px">
+              </div>
+            </div>
+          </div>
+          <slot />
+        </div>
       </div>
     </div>
     <div id="footer" class="footer top-auto flex flex-column space-between pt-10px pb-10px pr-10px pl-10px">
@@ -54,7 +80,21 @@ export default {
   data() {
     return {
       categories: ['New', 'Best', 'Warm', 'Cool', 'Lovely', 'Daily'],
-      communities: ['Notice', 'Review', 'Event']
+      communities: ['Notice', 'Review', 'Event'],
+    }
+  },
+  methods: {
+    mouseEnterUser() {
+      const user = this.$refs['user'];
+      const userMenu = this.$refs['userMenu'];
+      user.style.height = '50px';
+      userMenu.className = 'cursor-default flex flex-column border-solid radius-10px width-100px pt-10px pb-10px absolute top-30px';
+    },
+    mouseLeaveUser() {
+      const user = this.$refs['user'];
+      const userMenu = this.$refs['userMenu'];
+      user.style.height = '100%';
+      userMenu.className = 'none cursor-default flex flex-column border-solid radius-10px width-100px pt-10px pb-10px absolute top-30px';
     }
   }
 }
@@ -83,7 +123,13 @@ export default {
 .border-e7e7e7 {
   border-color: #e7e7e7;
 }
-.width-240px {
+.width-200px {
   width: 200px;
+}
+.width-100px {
+  width: 100px;
+}
+.top-30px {
+  top: 30px;
 }
 </style>

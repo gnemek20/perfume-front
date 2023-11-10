@@ -5,7 +5,7 @@
       <div class="selector top-auto mb-10px grid gap-10 opacity-75">
         <label :for="number" class="relative" v-for="number in images.length" v-bind:key="number">
           <input :ref="`radio${number}`" type="radio" :id="number" name="image" @click="clickRadioButton(number)">
-          <span class="button pointer"></span>
+          <span class="button cursor-pointer"></span>
         </label>
       </div>
     </div>
