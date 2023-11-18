@@ -8,6 +8,9 @@ Vue.config.productionTip = false
 import DefaultUI from '@/styles/default.scss'
 Vue.use(DefaultUI)
 
+import functions from '@/scripts/default.js'
+Vue.use(functions)
+
 new Vue({
   router,
   store,

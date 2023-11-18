@@ -24,7 +24,7 @@ export default {
     this.eventListener.addEventListener('scroll', this.scrollCategory);
   },
   beforeDestroy() {
-    this.eventListener.removeEvenrListener('scroll', this.scrollCategory);
+    this.eventListener.removeEventListener('scroll', this.scrollCategory);
   },
   methods: {
     scrollCategory() {

@@ -4,7 +4,7 @@
       <div id="side" class="side flex flex-column relative">
         <div class="absolute width-200px right-10px">
           <div class="fixed flex flex-column width-200px">
-            <div class="flex mt-20px mb-100px">
+            <div class="flex cursor-pointer mt-20px mb-100px" @click="$push('/')">
               <h1 class="color-fcf8f7">Logo</h1>
             </div>
             <div class="flex flex-column">
@@ -33,10 +33,10 @@
               <div ref="user" class="cursor-pointer flex flex-column justify-start align-center pr-5px pl-5px relative" @mouseenter="mouseEnterUser" @mouseleave="mouseLeaveUser">
                 <img src="@/assets/icons/user.svg" width="24px">
                 <div ref="userMenu" class="none cursor-default flex flex-column border-solid radius-10px width-100px pt-10px pb-10px absolute top-30px" @mouseenter="mouseEnterUser" @mouseleave="mouseLeaveUser">
-                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">
+                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px" @click="$push('signin')">
                     <p>로그인</p>
                   </div>
-                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">
+                  <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px" @click="$push('signup')">
                     <p>회원가입</p>
                   </div>
                   <div class="cursor-pointer area-hover text-hover flex justify-center max-width pt-5px pb-5px">

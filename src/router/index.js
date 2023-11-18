@@ -8,6 +8,16 @@ const routes = [
     path: '/',
     name: 'landing',
     component: () => import('@/views/Landing.vue')
+  },
+  {
+    path: '/signin',
+    name: 'signin',
+    component: () => import('@/views/sign/In.vue')
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: () => import('@/views/sign/Up.vue')
   }
 ]
 
