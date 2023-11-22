@@ -28,7 +28,7 @@
       </div>
       <div id="content" class="content flex justify-center max-width">
         <div class="lock-width max-width">
-          <div class="flex mr-5px pt-10px pr-10px">
+          <div class="absolute right-0px flex mr-50px pt-10px pr-10px">
             <div class="flex left-auto">
               <div ref="user" class="cursor-pointer flex flex-column justify-start align-center pr-5px pl-5px relative" @mouseenter="mouseEnterUser" @mouseleave="mouseLeaveUser">
                 <img src="@/assets/icons/user.svg" width="24px">

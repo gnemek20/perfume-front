@@ -2,6 +2,28 @@
   <div>
     <Banner />
     <Base>
+      <div class="flex flex-column justify-center">
+        <div class="mt-50px mb-50px">
+          <h2 class="text-center">New Arival</h2>
+        </div>
+        <div class="list">
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+        </div>
+        <div class="mt-50px mb-50px">
+          <h2 class="text-center">New Arival</h2>
+        </div>
+        <div class="list">
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+          <Frame></Frame>
+        </div>
+      </div>
     </Base>
   </div>
 </template>
@@ -9,11 +31,13 @@
 <script>
 import Banner from '@/components/Banner.vue'
 import Base from '@/components/Base.vue'
+import Frame from '@/components/Frame.vue'
 
 export default {
   components: {
     Banner,
-    Base
+    Base,
+    Frame
   },
   data() {
     return {
@@ -37,3 +61,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.list {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  gap: 25px;
+}
+</style>
